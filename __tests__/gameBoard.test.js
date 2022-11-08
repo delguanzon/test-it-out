@@ -12,6 +12,7 @@ describe('Gameboard', ()=> {
     const gameBoard = new GameBoard();
     let player = new Player('Vera');
     gameBoard.addPlayer(player);
+    expect(z).not.toBeNull();
     expect(gameBoard.players).toContain(player);
   });
 });
