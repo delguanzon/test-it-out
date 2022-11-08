@@ -30,40 +30,5 @@ export function Player(name) {
   this.turnScore = 0;
 }
 
-// Game Turn Function
+//Business Logic for NewTurn
 
-export function NewTurn(hold, player) {
- 
-  if (!hold) {
-    gameBoard.diceRoll = gameBoard.roll();    
-    if (gameBoard.diceRoll === 1) {
-      console.log("dice roll === 1");
-      player.turnScore = 0;
-      if(gameBoard.turnId < Object.keys(gameBoard.players).length) {
-        gameBoard.turnId += 1;
-      }
-      else {
-        gameBoard.turnId = 1;
-      }      
-      console.log("Next Player: "+ gameBoard.players[gameBoard.turnId].name);
-    } else {
-      player.turnScore += gameBoard.diceRoll;
-      console.log("player scores! " + player.turnScore);
-    }
-  } else {
-    console.log("Turn Score: " + player.turnScore);
-    player.gameScore += player.turnScore;
-    
-    player.turnScore = 0;
-    
-    if(gameBoard.turnId < Object.keys(gameBoard.players).length) {
-      gameBoard.turnId += 1;
-    }
-    else {
-      gameBoard.turnId = 1;
-    }  
-    console.log("Player Held: " + player.gameScore + "Next Player: " + gameBoard.players[gameBoard.turnId].name);
-  } 
-  checkEndGame(); 
-  //console.log("Game Score:" + player.gameScore + "Turn Score: " + player.turnScore);
-}
