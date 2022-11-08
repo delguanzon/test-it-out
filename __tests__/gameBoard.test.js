@@ -11,8 +11,8 @@ describe('Gameboard', ()=> {
   test('should correctly add a player to gameboard', () => {
     const gameBoard = new GameBoard();
     let player = new Player('Vera');
-    gameBoard.addPlayer(player)
-    expect(gameBoard.players).toContain('Vera');
-  })
+    gameBoard.addPlayer(player);
+    expect(gameBoard.players).toContain(player);
+  });
 });
 
